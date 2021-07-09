@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>layout 后台大布局 - Layui</title>
+    <link rel="stylesheet" th:href="@{/layui/css/layui.css}">
+</head>
+<body class="layui-layout-body">
+<div class="layui-layout layui-layout-admin">
+    <div class="layui-header" th:fragment="topbar">
+        <div class="layui-logo" ><a class="logocss" href="/" >秋实考研</a></div>
+        <!-- 头部区域（可配合layui已有的水平导航） -->
+        <ul class="layui-nav layui-layout-right" >
+            <li class="layui-nav-item">
+                <a href="javascript:;">
+                    <img th:src="@{'/picture/'+${userInfo.userPicture}}" class="layui-nav-img" >
+                </a>
+            </li>
+            <li class="layui-nav-item">
+                <a th:href="@{/user/Info(username=${session.username})}" th:text="${session.username}"></a>
+            </li>
+            <li class="layui-nav-item"><a href="/logout">退出登录</a></li>
+        </ul>
+    </div>
+
+    <div class="layui-side layui-bg-black">
+        <div class="layui-side-scroll">
+            <br></br><br>
+            <!-- 左侧导航区域（可配合layui已有的垂直导航） -->
+            <ul class="layui-nav layui-nav-tree"  lay-filter="test">
+                <li class="layui-nav-item" >
+                    <a href="javascript:;" class="silder">我的资料</a>
+                </li>
+                <li class="layui-nav-item">
+                    <a th:href="@{/user/Course}" class="silder">我的课程</a>
+                </li>
+                <li class="layui-nav-item">
+                    <a th:href="@{/user/updateInfo}" class="silder">修改资料</a>
+                </li>
+                <li class="layui-nav-item ">
+                    <a th:href="@{/order/toMyOrder}" class="silder">我的订单</a>
+                </li>
+                <li class="layui-nav-item" th:if="${teacherInfo}">
+                    <a th:href="@{/user/toUploadCourse}" class="silder">上传课程</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="layui-body">
+        <table id="demo" lay-filter="test"></table>
+    </div>
+
+    <div class="layui-footer">
+        <!-- 底部固定区域 -->
+        © layui.com - 底部固定区域
+    </div>
+</div>
+<script th:src="@{/layui/layui.js}"></script>
+<script>
+    //JavaScript代码区域
+    layui.use(['element','table','laytpl'], function(){
+        var element = layui.element;
+        var table = layui.table;
+        var laytpl = layui.laytpl;
+        table.render({
+            elem: '#demo'
+            ,height: 500
+            ,where:{username:'[[${session.username}]]'}
+            ,url: '/order/getOrders' //数据接口
+            ,page: true //开启分页
+            ,method:'post'
+            ,limit:8//每页显示的记录数量
+            , limits:[5,8,10,15,20]//可选择每页显示的数量
+            ,cols: [
+                [ //表头
+                    {field: 'orderNumber', title: '订单流水号', width:300,sort: true,templet: '#orderNumberTemplate'}
+                    ,{field: 'orderCreateTime', title: '订单创立时间', width:200, sort: true}
+                    ,{field: 'orderFinishTime', title: '订单完成时间', width:100}
+                    ,{field: 'orderPrice', title: '订单总额', width: 177,sort: true}
+                    ,{field: 'orderStatus', title: '订单状态', width: 177,sort: true,templet: '#orderStatusTemplate'}
+                    , {field: 'orderNumber', title: '订单按钮', width:250,templet: '#orderButtonTemplate'}
+                ]
+            ]
+        });
+    });
+</script>
+<script type="text/html" id="orderStatusTemplate">
+    {{#  if(d.orderStatus == 1){ }}
+   <div>已完成</div>
+    {{#  } else { }}
+    <div>未完成</div>
+    {{#  } }}
+</script>
+
+<script type="text/html" id="orderButtonTemplate">
+    <button type="button" class="layui-btn   layui-btn-sm layui-btn-radius">
+        <a href="/order/getDetail/{{d.orderNumber}}">查看详细</a>
+    </button>
+    <button type="button" class="layui-btn  layui-btn-sm  layui-btn-radius layui-btn-danger">
+        <a href="/order/getDetail/{{d.orderNumber}}">删除该单</a>
+    </button>
+</script>
+
+<script type="text/html" id="orderNumberTemplate">
+    <a href="/order/getDetail/{{d.orderNumber}}" class="layui-table-link">{{d.orderNumber}}</a>
+</script>
+</body>
+<style>
+    .logocss {
+        color: silver;
+        font-size: 30px;
+    }
+    .silder{
+        height: 200px;
+        font-size: 30px;
+        margin-bottom: 50px;
+    }
+    .userInfoColum{
+        width: 500px;
+        font-size: 20px;
+    }
+</style></html>

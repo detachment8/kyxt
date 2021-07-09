@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>秋实考研-资料修改</title>
+    <link rel="stylesheet" th:href="@{/layui/css/layui.css}">
+</head>
+<body class="layui-layout-body">
+<div class="layui-layout layui-layout-admin">
+    <div class="layui-header">
+        <div class="layui-logo" ><a class="logocss" href="/" >秋实考研</a></div>
+        <!-- 头部区域（可配合layui已有的水平导航） -->
+        <ul class="layui-nav layui-layout-right" >
+            <li class="layui-nav-item">
+                <a href="javascript:;">
+                    <img th:src="@{'/picture/'+${userInfo.userPicture}}" class="layui-nav-img" >
+                </a>
+            </li>
+            <li class="layui-nav-item">
+                <a th:href="@{/user/Info(username=${session.username})}" th:text="${session.username}"></a>
+            </li>
+            <li class="layui-nav-item"><a href="/logout">退出登录</a></li>
+        </ul>
+    </div>
+
+    <div class="layui-side layui-bg-black">
+        <div class="layui-side-scroll">
+            <br></br><br>
+            <!-- 左侧导航区域（可配合layui已有的垂直导航） -->
+            <ul class="layui-nav layui-nav-tree"  lay-filter="test">
+                <li class="layui-nav-item" >
+                    <a href="javascript:;" class="silder">我的资料</a>
+                </li>
+                <li class="layui-nav-item">
+                    <a th:href="@{/user/Course}" class="silder">我的课程</a>
+                </li>
+                <li class="layui-nav-item">
+                    <a th:href="@{/user/updateInfo}" class="silder">修改资料</a>
+                </li>
+                <li class="layui-nav-item ">
+                    <a th:href="@{/order/toMyOrder}" class="silder">我的订单</a>
+                </li>
+                <li class="layui-nav-item" th:if="${teacherInfo}">
+                    <a th:href="@{/user/toUploadCourse}" class="silder">上传课程</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="layui-body">
+        <!-- 内容主体区域 -->
+        <div style="padding: 15px;">
+
+            <form class="layui-form layui-col-lg6" action="/user/comfirmUpdate" method="post" enctype="multipart/form-data">
+                <div class="layui-form-item" >
+                    <label  class="layui-form-label">姓名</label>
+                    <div class="layui-input-block" >
+                        <input th:name="studentName" type="text" th:if="${studentInfo}" th:value="${studentInfo.studentName}" autocomplete="off" class="layui-input">
+                        <input th:name="teacherName" type="text" th:if="${teacherInfo}" th:value="${teacherInfo.teacherName}" autocomplete="off" class="layui-input">
+                    </div>
+                </div>
+                <div class="layui-form-item">
+                    <label class="layui-form-label">电子邮箱</label>
+                    <div class="layui-input-block">
+                        <input th:name="userEmail" type="text" name="title" th:value="${userInfo.userEmail}" autocomplete="off" class="layui-input">
+                    </div>
+                </div>
+                <div class="layui-form-item">
+                    <label class="layui-form-label">手机号码</label>
+                    <div class="layui-input-block">
+                        <input  th:name="userPhone" type="text" name="title" th:value="${userInfo.userPhone}" autocomplete="off" class="layui-input">
+                    </div>
+                </div>
+                <div class="layui-form-item" >
+                    <label class="layui-form-label">所属学校</label>
+                    <div class="layui-input-block" >
+                        <input   th:name="studentSchool" type="text" th:if="${studentInfo}" th:value="${studentInfo.studentSchool}" autocomplete="off" class="layui-input">
+                        <input  th:name="teacherSchool" type="text" th:if="${teacherInfo}" th:value="${teacherInfo.teacherSchool}" autocomplete="off" class="layui-input">
+                    </div>
+                </div>
+                <div class="layui-form-item">
+                    <label class="layui-form-label">专业名称</label>
+                    <div class="layui-input-block" >
+                        <input th:name="studentMajor"  type="text" th:if="${studentInfo}" th:value="${studentInfo.studentMajor}" autocomplete="off" class="layui-input">
+                        <input th:name="teacherMajor" type="text" th:if="${teacherInfo}" th:value="${teacherInfo.teacherMajor}" autocomplete="off" class="layui-input">
+                    </div>
+                </div>
+                <div class="layui-form-item">
+                    <label class="layui-form-label">当前头像</label>
+                    <div class="layui-input-block" th:if="${userInfo.userPicture}">
+                        <img  class="picture" th:src="@{'/picture/'+${userInfo.userPicture}}">
+                    </div>
+                </div>
+                <div class="layui-form-item">
+                    <label class="layui-form-label"> 选择图片</label>
+                    <div class="layui-input-block">
+                       <input th:name="Picture" type="file" name="file"   accept="image/*" /> <br>
+                    </div>
+                </div>
+                <div class="layui-form-item">
+                    <div class="layui-input-block">
+                        <button class="layui-btn" lay-submit lay-filter="formDemo">立即提交</button>
+                        <button type="reset" class="layui-btn layui-btn-primary">重置</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div class="layui-footer">
+        <!-- 底部固定区域 -->
+        © layui.com - 底部固定区域
+    </div>
+</div>
+<script th:src="@{/layui/layui.js}"></script>
+<script>
+
+    //JavaScript代码区域
+    layui.use('element','form','upload', function(){
+        var element = layui.element;
+        var form = layui.form;
+        var upload = layui.upload;
+
+        var uploadInst = upload.render({
+            elem: '#test1' //绑定元素
+            ,url: '/upload/' //上传接口
+            ,done: function(res){
+                //上传完毕回调
+            }
+            ,error: function(){
+                //请求异常回调
+            }
+        });
+    });
+</script>
+</body>
+<style>
+    .logocss {
+        color: silver;
+        font-size: 30px;
+    }
+    .silder{
+        height: 200px;
+        font-size: 30px;
+        margin-bottom: 50px;
+    }
+    .picture{
+        width: 200px;
+        height: 200px;
+    }
+</style></html>

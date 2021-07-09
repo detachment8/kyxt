@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>layout 后台大布局 - Layui</title>
+    <link rel="stylesheet" th:href="@{/layui/css/layui.css}">
+</head>
+<body class="layui-layout-body">
+<div class="layui-layout layui-layout-admin">
+    <div class="layui-header" th:fragment="topbar">
+        <div class="layui-logo" ><a class="logocss" href="/" >秋实考研</a></div>
+        <!-- 头部区域（可配合layui已有的水平导航） -->
+        <ul class="layui-nav layui-layout-right" >
+            <li class="layui-nav-item">
+                <a href="javascript:;">
+                    <img th:src="@{'/picture/'+${userInfo.userPicture}}" class="layui-nav-img" >
+                </a>
+            </li>
+            <li class="layui-nav-item">
+                    <a th:href="@{/user/Info(username=${session.username})}" th:text="${session.username}"></a>
+            </li>
+            <li class="layui-nav-item"><a href="/logout">退出登录</a></li>
+        </ul>
+    </div>
+
+    <div class="layui-side layui-bg-black">
+        <div class="layui-side-scroll">
+            <br></br><br>
+            <!-- 左侧导航区域（可配合layui已有的垂直导航） -->
+            <ul class="layui-nav layui-nav-tree"  lay-filter="test">
+                <li class="layui-nav-item" >
+                    <a href="javascript:;" class="silder">我的资料</a>
+                </li>
+                <li class="layui-nav-item">
+                    <a th:href="@{/user/Course}" class="silder">我的课程</a>
+                </li>
+                <li class="layui-nav-item">
+                    <a th:href="@{/user/updateInfo}" class="silder">修改资料</a>
+                </li>
+                <li class="layui-nav-item ">
+                    <a th:href="@{/order/toMyOrder}" class="silder">我的订单</a>
+                </li>
+                <li class="layui-nav-item" th:if="${teacherInfo}">
+                    <a th:href="@{/user/toUploadCourse}" class="silder">上传课程</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="layui-body">
+        <!-- 内容主体区域 -->
+        <div style="padding: 15px;">
+                <p style="font-size: 30px;text-align: center">用户信息</p>
+            <fieldset class="layui-elem-field userInfoColum"  th:if="${userInfo.userName}">
+                <legend>用户名</legend>
+                <div class="layui-field-box " th:text="${userInfo.userName}">
+                    内容区域
+                </div>
+            </fieldset>
+            <fieldset class="layui-elem-field userInfoColum"  th:if="${userInfo.userEmail}">
+                <legend>电子邮箱</legend>
+                <div class="layui-field-box " th:text="${userInfo.userEmail}">
+                    内容区域
+                </div>
+            </fieldset>
+            <fieldset class="layui-elem-field userInfoColum"  th:if="${userInfo.userPhone}">
+                <legend>手机号码</legend>
+                <div class="layui-field-box " th:text="${userInfo.userPhone}">
+                    内容区域
+                </div>
+            </fieldset>
+            <fieldset class="layui-elem-field userInfoColum"  th:if="${teacherInfo}">
+                <legend>所在学校</legend>
+                <div class="layui-field-box"  th:text="${teacherInfo.teacherSchool}">
+
+                </div>
+            </fieldset>
+            <fieldset class="layui-elem-field userInfoColum"  th:if="${studentInfo}">
+                <legend>所在学校</legend>
+                <div class="layui-field-box"  th:text="${studentInfo.studentSchool}">
+
+                </div>
+            </fieldset>
+            <fieldset class="layui-elem-field userInfoColum"  th:if="${studentInfo}">
+                <legend>所在专业</legend>
+                <div class="layui-field-box"  th:text="${studentInfo.studentMajor}">
+                </div>
+            </fieldset>
+            <fieldset class="layui-elem-field userInfoColum"  th:if="${teacherInfo}">
+                <legend>所在专业</legend>
+                <div class="layui-field-box"  th:text="${teacherInfo.teacherMajor}">
+                </div>
+            </fieldset>
+            <fieldset class="layui-elem-field userInfoColum"  th:if="${userInfo}">
+                <legend>用户建立时间</legend>
+                <div class="layui-field-box"  th:text="${#dates.format(userInfo.createTime, 'yyyy-MM-dd')}">
+                </div>
+            </fieldset>
+        </div>
+    </div>
+
+    <div class="layui-footer">
+        <!-- 底部固定区域 -->
+        © layui.com - 底部固定区域
+    </div>
+</div>
+<script th:src="@{/layui/layui.js}"></script>
+<script>
+    //JavaScript代码区域
+    layui.use('element', function(){
+        var element = layui.element;
+
+    });
+</script>
+</body>
+<style>
+    .logocss {
+        color: silver;
+        font-size: 30px;
+    }
+    .silder{
+        height: 200px;
+        font-size: 30px;
+        margin-bottom: 50px;
+    }
+.userInfoColum{
+    width: 500px;
+    font-size: 20px;
+}
+</style></html>

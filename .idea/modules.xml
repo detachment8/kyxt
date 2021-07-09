@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/kyxt.iml" filepath="$PROJECT_DIR$/kyxt.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../kyxtHT/kyxtHT.iml" filepath="$PROJECT_DIR$/../kyxtHT/kyxtHT.iml" />
+    </modules>
+  </component>
+</project>

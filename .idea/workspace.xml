@@ -1,0 +1,356 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="bb6469d1-c3d6-4ff9-8fd3-12afaaac3a45" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CompilerWorkspaceConfiguration">
+    <option name="MAKE_PROJECT_ON_SAVE" value="true" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="CSS File" />
+        <option value="Interface" />
+        <option value="Class" />
+        <option value="HTML File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/src/main/java/com/sqs/txy/service/impl/userSeviceImpl.java" root0="SKIP_INSPECTION" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="localRepository" value="D:\mvnrep" />
+        <option name="mavenHome" value="D:/apache-maven-3.6.3" />
+        <option name="userSettingsFile" value="D:\apache-maven-3.6.3\conf\settings.xml" />
+      </MavenGeneralSettings>
+    </option>
+    <option name="importingSettings">
+      <MavenImportingSettings>
+        <option name="importAutomatically" value="true" />
+      </MavenImportingSettings>
+    </option>
+  </component>
+  <component name="ProjectId" id="1Z1CWqrAujOnk2PMVzV2g1tQN0K" />
+  <component name="ProjectViewState">
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="RequestMappingsPanelOrder0" value="0" />
+    <property name="RequestMappingsPanelOrder1" value="1" />
+    <property name="RequestMappingsPanelWidth0" value="75" />
+    <property name="RequestMappingsPanelWidth1" value="75" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_directory_selection" value="$PROJECT_DIR$/../kyxtHT/src/main/java" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="list.type.of.created.stylesheet" value="CSS" />
+    <property name="project.structure.last.edited" value="Artifacts" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="restartRequiresConfirmation" value="false" />
+    <property name="settings.editor.selected.configurable" value="vcs.Git" />
+    <property name="show.run.dashboard.notification" value="false" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="E:\IDEA-workspace\kyxtHT\src\main\resources\static\images" />
+      <recent name="E:\IDEA-workspace\kyxt\src\main\resources\static\images" />
+      <recent name="E:\IDEA-workspace\kyxt\src\main\resources\templates" />
+      <recent name="E:\IDEA-workspace\kyxt\src\main\resources\templates\mall" />
+      <recent name="E:\IDEA-workspace\kyxt\src\main\resources\static\css" />
+    </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="com.sqs.txy" />
+      <recent name="com" />
+      <recent name="kyxtht" />
+    </key>
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="com.sqs.txy.bean" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\IDEA-workspace\kyxtHT\src\main\java\kyxtht" />
+      <recent name="E:\IDEA-workspace\kyxtHT\src\main\resources\static\images" />
+      <recent name="E:\IDEA-workspace\kyxt\src\main\resources\static\images" />
+      <recent name="E:\IDEA-workspace\kyxtHT\src\main\resources" />
+      <recent name="E:\IDEA-workspace\kyxt" />
+    </key>
+  </component>
+  <component name="RestServicesNavigator">
+    <treeState>
+      <expand>
+        <path>
+          <item name="Found 49 services " type="fcff1e1b:RestServiceStructure$RootNode" />
+        </path>
+        <path>
+          <item name="Found 49 services " type="fcff1e1b:RestServiceStructure$RootNode" />
+          <item name="kyxtHT" type="c588b436:RestServiceStructure$ProjectNode" />
+        </path>
+      </expand>
+      <select />
+    </treeState>
+  </component>
+  <component name="RunManager" selected="Spring Boot.KyxtApplication (1)">
+    <configuration name="KyxtApplicationTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="kyxt" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.sqs.txy.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.sqs.txy" />
+      <option name="MAIN_CLASS_NAME" value="com.sqs.txy.KyxtApplicationTests" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="KyxtApplicationTests.test1" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="kyxt" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.sqs.txy.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.sqs.txy" />
+      <option name="MAIN_CLASS_NAME" value="com.sqs.txy.KyxtApplicationTests" />
+      <option name="METHOD_NAME" value="test1" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="KyxtHtApplicationTests.contextLoads" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="kyxtHT" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="kyxtht.demo.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="kyxtht.demo" />
+      <option name="MAIN_CLASS_NAME" value="kyxtht.demo.KyxtHtApplicationTests" />
+      <option name="METHOD_NAME" value="contextLoads" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="KyxtApplication (1)" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="kyxt" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.sqs.txy.KyxtApplication" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="UPDATE_ACTION_UPDATE_POLICY" value="UpdateClassesAndResources" />
+      <option name="FRAME_DEACTIVATION_UPDATE_POLICY" value="UpdateClassesAndResources" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="KyxtHtApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="kyxtHT" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="kyxtht.KyxtHtApplication" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="UPDATE_ACTION_UPDATE_POLICY" value="UpdateClassesAndResources" />
+      <option name="FRAME_DEACTIVATION_UPDATE_POLICY" value="UpdateClassesAndResources" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="JUnit.KyxtApplicationTests.test1" />
+      <item itemvalue="JUnit.KyxtApplicationTests" />
+      <item itemvalue="JUnit.KyxtHtApplicationTests.contextLoads" />
+      <item itemvalue="Spring Boot.KyxtApplication (1)" />
+      <item itemvalue="Spring Boot.KyxtHtApplication" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.KyxtHtApplicationTests.contextLoads" />
+        <item itemvalue="JUnit.KyxtApplicationTests.test1" />
+        <item itemvalue="JUnit.KyxtApplicationTests" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="ServiceViewManager">
+    <option name="viewStates">
+      <list>
+        <serviceView>
+          <treeState>
+            <expand />
+            <select />
+          </treeState>
+        </serviceView>
+      </list>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="bb6469d1-c3d6-4ff9-8fd3-12afaaac3a45" name="Default Changelist" comment="" />
+      <created>1583997247461</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1583997247461</updated>
+      <workItem from="1583997285925" duration="227000" />
+      <workItem from="1584072223658" duration="3751000" />
+      <workItem from="1584099754728" duration="1642000" />
+      <workItem from="1584103734098" duration="659000" />
+      <workItem from="1584258448890" duration="212000" />
+      <workItem from="1584258749201" duration="2926000" />
+      <workItem from="1584338712226" duration="922000" />
+      <workItem from="1584526267718" duration="162000" />
+      <workItem from="1584885698477" duration="270000" />
+      <workItem from="1585210603378" duration="1169000" />
+      <workItem from="1585486023878" duration="4000" />
+      <workItem from="1585488830354" duration="6000" />
+      <workItem from="1585666762251" duration="750000" />
+      <workItem from="1585707357341" duration="10058000" />
+      <workItem from="1585743961486" duration="9053000" />
+      <workItem from="1585797126483" duration="28227000" />
+      <workItem from="1585880234630" duration="4768000" />
+      <workItem from="1585915065590" duration="6779000" />
+      <workItem from="1585923239398" duration="1339000" />
+      <workItem from="1585924595620" duration="2148000" />
+      <workItem from="1585965765726" duration="2679000" />
+      <workItem from="1585973523886" duration="10211000" />
+      <workItem from="1585991353942" duration="1856000" />
+      <workItem from="1586003790858" duration="5999000" />
+      <workItem from="1586009821100" duration="967000" />
+      <workItem from="1586053457180" duration="677000" />
+      <workItem from="1586064701129" duration="13597000" />
+      <workItem from="1586141745679" duration="19002000" />
+      <workItem from="1586225693503" duration="7803000" />
+      <workItem from="1586246966936" duration="6360000" />
+      <workItem from="1586256187868" duration="9228000" />
+      <workItem from="1586309723975" duration="7892000" />
+      <workItem from="1586353801885" duration="3631000" />
+      <workItem from="1586398849204" duration="28868000" />
+      <workItem from="1586481279002" duration="9901000" />
+      <workItem from="1586509289317" duration="9865000" />
+      <workItem from="1586526625680" duration="1001000" />
+      <workItem from="1586528483817" duration="1529000" />
+      <workItem from="1586577562897" duration="6792000" />
+      <workItem from="1586654859044" duration="4699000" />
+      <workItem from="1586669725643" duration="4289000" />
+      <workItem from="1586696195267" duration="6055000" />
+      <workItem from="1586741210798" duration="19863000" />
+      <workItem from="1586784481882" duration="3487000" />
+      <workItem from="1586865313708" duration="7656000" />
+      <workItem from="1586915722140" duration="20462000" />
+      <workItem from="1586949284095" duration="2671000" />
+      <workItem from="1586952882815" duration="3606000" />
+      <workItem from="1587030886026" duration="2956000" />
+      <workItem from="1587086490401" duration="15906000" />
+      <workItem from="1587132587926" duration="3868000" />
+      <workItem from="1587170859579" duration="6329000" />
+      <workItem from="1587188708130" duration="13817000" />
+      <workItem from="1587216289550" duration="3755000" />
+      <workItem from="1587261951557" duration="7667000" />
+      <workItem from="1587380950035" duration="159000" />
+      <workItem from="1587429141811" duration="1541000" />
+      <workItem from="1587432369539" duration="23000" />
+      <workItem from="1587432621684" duration="327000" />
+      <workItem from="1587432965478" duration="139000" />
+      <workItem from="1587433115250" duration="17951000" />
+      <workItem from="1587473224695" duration="6628000" />
+      <workItem from="1587522012171" duration="4719000" />
+      <workItem from="1587535621974" duration="6098000" />
+      <workItem from="1587550587002" duration="2891000" />
+      <workItem from="1587687899153" duration="653000" />
+      <workItem from="1587723857042" duration="10462000" />
+      <workItem from="1587777828193" duration="4862000" />
+      <workItem from="1587818534334" duration="1236000" />
+      <workItem from="1588038420211" duration="776000" />
+      <workItem from="1588298529826" duration="3000" />
+      <workItem from="1588299166506" duration="1000" />
+      <workItem from="1588643367966" duration="4647000" />
+      <workItem from="1588819794573" duration="1924000" />
+      <workItem from="1589099222674" duration="1763000" />
+      <workItem from="1589183010511" duration="2178000" />
+      <workItem from="1589337631093" duration="685000" />
+      <workItem from="1589534866944" duration="7382000" />
+      <workItem from="1589629688961" duration="3000" />
+      <workItem from="1589647680094" duration="1144000" />
+      <workItem from="1589963087457" duration="4000" />
+      <workItem from="1589987707752" duration="16000" />
+      <workItem from="1590382479445" duration="467000" />
+      <workItem from="1590458277496" duration="2674000" />
+      <workItem from="1596374866258" duration="5000" />
+      <workItem from="1597200247116" duration="39000" />
+      <workItem from="1597311221654" duration="6000" />
+      <workItem from="1606204415805" duration="167000" />
+      <workItem from="1606984152320" duration="163000" />
+      <workItem from="1606984332854" duration="140000" />
+      <workItem from="1606984488834" duration="1281000" />
+      <workItem from="1611496559639" duration="53000" />
+      <workItem from="1620369733533" duration="69000" />
+      <workItem from="1625817616396" duration="939000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="643" y="308" width="539" height="207" key="Github.ShareDialog" timestamp="1625818675244">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="643" y="308" width="539" height="207" key="Github.ShareDialog/0.0.1536.824@0.0.1536.824" timestamp="1625818675244" />
+    <state x="573" y="118" key="Github.UntrackedFilesDialog" timestamp="1625818689683">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="573" y="118" key="Github.UntrackedFilesDialog/0.0.1536.824@0.0.1536.824" timestamp="1625818689683" />
+    <state width="1493" height="222" key="GridCell.Tab.0.bottom" timestamp="1625818579676">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="222" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1625818579676" />
+    <state width="1493" height="222" key="GridCell.Tab.0.center" timestamp="1625818579676">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="222" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1625818579676" />
+    <state width="1493" height="222" key="GridCell.Tab.0.left" timestamp="1625818579676">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="222" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1625818579676" />
+    <state width="1493" height="222" key="GridCell.Tab.0.right" timestamp="1625818579676">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="222" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1625818579676" />
+    <state width="1493" height="222" key="GridCell.Tab.1.bottom" timestamp="1625818579677">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="222" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1625818579677" />
+    <state width="1493" height="222" key="GridCell.Tab.1.center" timestamp="1625818579677">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="222" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1625818579677" />
+    <state width="1493" height="222" key="GridCell.Tab.1.left" timestamp="1625818579676">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="222" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1625818579676" />
+    <state width="1493" height="222" key="GridCell.Tab.1.right" timestamp="1625818579677">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="222" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1625818579677" />
+    <state x="272" y="58" key="SettingsEditor" timestamp="1625818562747">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="272" y="58" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1625818562747" />
+  </component>
+</project>

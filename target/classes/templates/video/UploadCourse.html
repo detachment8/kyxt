@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="/webjars/bootstrap/3.3.7-1/css/bootstrap.min.css">
+    <title>上传视频</title>
+</head>
+<body>
+<nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container" >
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" style="font-size: 30px;font-weight:bold" th:href="${'/'}" >秋实考研</a>
+        </div>
+        <div  id="navbar" class="navbar-collapse collapse" style="color: silver;font-size: 20px">
+            <form class="navbar-form navbar-right"   action="/user/register" >
+                <button type="submit" class="btn btn-link"  style="font-size: 20px"  th:if="not ${session.username}" >注册</button>
+            </form>
+            <form class="navbar-form navbar-right"  action="/user/toLogin" method="post" th:if="not ${session.username}" >
+                <button type="submit" class="btn btn-link" style="font-size: 20px">登录</button>
+            </form>
+            <form class="navbar-form navbar-right"  action="/logout" method="post" th:if=" ${session.username}" >
+                <button type="submit" class="btn btn-link" style="font-size: 20px" >退出登录</button>
+            </form>
+            <form class="navbar-form navbar-right"  action="/mall/toMall" method="post" >
+                <button type="submit" class="btn btn-link" style="font-size: 20px">秋实商城</button>
+            </form>
+
+            <form class="navbar-form navbar-right"  action="/mall/toCart" method="post"th:if="${session.username}" >
+                <button type="submit" class="btn btn-link" style="font-size: 20px" >我的购物车</button>
+            </form>
+            <form class="navbar-form navbar-right" action="/user/Info" method="post" th:if="${session.username}">
+                <input type="text" th:name="username" th:value="${session.username}" hidden>
+                你好,<button type="submit" class="btn btn-link" style="font-size: 20px"  th:text="${session.username}"></button>!
+            </form>
+
+
+        </div><!--/.navbar-collapse -->
+    </div>
+</nav>
+
+    <div class="container" >
+            <div class="row" style="margin-top: 60px;text-align: center">
+                <img class="my-img" th:src="@{/images/step-one.png}">
+            </div>
+    </div>
+<div class="container" style="margin-top: 50px ;">
+            <h1>新建课程：</h1>
+            <div class="col-lg-offset-1 col-lg-8">
+                <form  class="form-horizontal" action="/video/uploadStepOne" method="post" enctype="multipart/form-data">
+                    <div class="form-group my-form-div">
+                        <label for="courseName" class="col-sm-2 control-label">课程名称:</label>
+                        <div class="col-sm-5">
+                            <input type="text" name="courseName" class="form-control" id="courseName" placeholder="请输入课程名称">
+                        </div>
+                        <p class="my-form-div-p">*必填</p>
+                    </div>
+                    <div class="form-group my-form-div">
+                        <label for="courseClass" class="col-sm-2 control-label">课程类别:</label>
+                        <div class="col-sm-2">
+                            <select class="form-control"name="courseMajor"  id="courseClass" >
+                              <option th:each="courseClass:${allCourseClass}" th:text="${courseClass}"></option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group my-form-div">
+                        <label for="coursePrice" class="col-sm-2 control-label">课程价格:</label>
+                        <div class="col-sm-4">
+                            <input name="coursePrice" type="text" class="form-control" id="coursePrice" placeholder="请以人民币为计价单位￥">
+                        </div>
+                    </div>
+                    <div class="form-group my-form-div">
+                        <label for="courseDesc" class="col-sm-2 control-label">课程描述:</label>
+                        <div class="col-sm-10">
+                            <textarea  name="courseDescription" rows="10" class="form-control"  id="courseDesc" placeholder="请输入课程描述"></textarea>
+                        </div>
+                    </div>
+                    <div  class="form-group my-form-div">
+                        <label for="coursePicture" class="col-sm-2 control-label">课程封面</label>
+                        <div class="layui-input-block">
+                            <input th:name="Picture" type="file" name="file"  id="coursePicture" accept="image/*" /> <br>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-sm-offset-2 col-sm-10">
+                            <button type="submit" class="btn btn-primary btn-lg">提交</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+</div>
+</body>
+
+<style>
+
+    .my-form-div-p{
+        font-size: 15px;
+        color: red;
+    }
+    .my-textarea{
+        height: 300px;
+    }
+    .my-img{
+        height: 150px;
+        width: 600px;
+    }
+</style>
+
+<script src="/webjars/jquery/3.2.1/jquery.min.js"></script>
+<script src="/webjars/bootstrap/3.3.7-1/js/bootstrap.min.js"></script>
+</html>
