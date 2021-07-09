@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>layout 后台大布局 - Layui</title>
+    <link rel="stylesheet" th:href="@{/layui/css/layui.css}">
+</head>
+<body class="layui-layout-body">
+<div class="layui-layout layui-layout-admin">
+    <div class="layui-header" th:fragment="topbar">
+        <div class="layui-logo" ><a class="logocss" href="/" >秋实考研</a></div>
+        <!-- 头部区域（可配合layui已有的水平导航） -->
+        <ul class="layui-nav layui-layout-right" >
+            <li class="layui-nav-item">
+                <a href="javascript:;">
+                    <img th:src="@{'/picture/'+${userInfo.userPicture}}" class="layui-nav-img" >
+                </a>
+            </li>
+            <li class="layui-nav-item">
+                <a th:href="@{/user/Info(username=${session.username})}" th:text="${session.username}"></a>
+            </li>
+            <li class="layui-nav-item"><a href="/logout">退出登录</a></li>
+        </ul>
+    </div>
+
+    <div class="layui-side layui-bg-black">
+        <div class="layui-side-scroll">
+            <br></br><br>
+            <!-- 左侧导航区域（可配合layui已有的垂直导航） -->
+            <ul class="layui-nav layui-nav-tree"  lay-filter="test">
+                <li class="layui-nav-item" >
+                    <a href="javascript:;" class="silder">我的资料</a>
+                </li>
+                <li class="layui-nav-item">
+                    <a th:href="@{/user/Course}" class="silder">我的课程</a>
+                </li>
+                <li class="layui-nav-item">
+                    <a th:href="@{/user/updateInfo}" class="silder">修改资料</a>
+                </li>
+                <li class="layui-nav-item ">
+                    <a th:href="@{/order/toMyOrder}" class="silder">我的订单</a>
+                </li>
+                <li class="layui-nav-item" th:if="${teacherInfo}">
+                    <a th:href="@{/user/toUploadCourse}" class="silder">上传课程</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+
+    <div class="layui-body my-course-body" >
+        <div th:if="${userCourses.size()} == 0" style="text-align: center">
+            <br><br><Br><br><br><Br><br><br><Br>
+                <h1>您暂时没有任何课程，快去选购吧！</h1>
+            <img th:src="@{/images/searchForNothing.png}">
+        </div>
+        <div th:each="course:${userCourses}" th:if="${userCourses}" class="my-course-div layui-col-lg2 layui-col-lg-offset1" >
+            <div >
+                <img  class="my-img" th:src="@{'/picture/'+${course.coursePicture}}">
+            </div>
+            <div >
+              <a th:href="@{/}" th:text="${course.courseName}"></a>
+            </div>
+            <div style="text-align: left;margin-top: 5px">
+                <p th:text="'主讲人：'+${course.courseSupporter}"></p>
+            </div>
+                <div style="margin-left: 130px;">
+                    <a 	class="layui-btn layui-btn-sm" th:href="@{|/video/playVideo/${course.courseId}|}">开始观看</a>
+                </div>
+        </div>
+    </div>
+
+    <div class="layui-footer">
+        <!-- 底部固定区域 -->
+        © layui.com - 底部固定区域
+    </div>
+</div>
+<script th:src="@{/layui/layui.js}"></script>
+<script>
+    //JavaScript代码区域
+    layui.use('element', function(){
+        var element = layui.element;
+
+    });
+</script>
+</body>
+<style>
+    .logocss {
+        color: silver;
+        font-size: 30px;
+    }
+    .silder{
+        height: 200px;
+        font-size: 30px;
+        margin-bottom: 50px;
+    }
+
+   .my-course-div{
+       text-align:center;
+       margin-top: 50px;
+       height: 250px;
+       border: 1px silver solid;
+   }
+    .my-img{
+        text-align:center;
+        margin-left: 10px;
+        width: 90%;
+        height: 170px;
+    }
+</style></html>

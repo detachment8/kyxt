@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="/webjars/bootstrap/3.3.7-1/css/bootstrap.min.css">
+
+    <title>Title</title>
+</head>
+<body>
+<nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container" >
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" style="font-size: 30px;font-weight:bold" th:href="${'/'}" >秋实考研</a>
+        </div>
+        <div  id="navbar" class="navbar-collapse collapse" style="color: silver;font-size: 20px">
+            <form class="navbar-form navbar-right"   action="/user/register" >
+                <button type="submit" class="btn btn-link"  style="font-size: 20px"  th:if="not ${session.username}" >注册</button>
+            </form>
+            <form class="navbar-form navbar-right"  action="/user/toLogin" method="post" th:if="not ${session.username}" >
+                <button type="submit" class="btn btn-link" style="font-size: 20px">登录</button>
+            </form>
+            <form class="navbar-form navbar-right"  action="/logout" method="post" th:if=" ${session.username}" >
+                <button type="submit" class="btn btn-link" style="font-size: 20px" >退出登录</button>
+            </form>
+            <form class="navbar-form navbar-right"  action="/mall/toMall" method="post" >
+                <button type="submit" class="btn btn-link" style="font-size: 20px">秋实商城</button>
+            </form>
+
+            <form class="navbar-form navbar-right"  action="/mall/toCart" method="post"th:if="${session.username}" >
+                <button type="submit" class="btn btn-link" style="font-size: 20px" >我的购物车</button>
+            </form>
+            <form class="navbar-form navbar-right" action="/user/Info" method="post" th:if="${session.username}">
+                <input type="text" th:name="username" th:value="${session.username}" hidden>
+                你好,<button type="submit" class="btn btn-link" style="font-size: 20px"  th:text="${session.username}"></button>!
+            </form>
+
+        </div><!--/.navbar-collapse -->
+    </div>
+</nav>
+<div  style="margin-top: 70px">
+    <div class="row">
+
+    </div>
+    <div class="row">
+        <div class="col-lg-1 col-lg-offset-1">
+            <a href="">
+                <img class="my-img" th:src="@{'/picture/'+${teacherPicture}}" >
+            </a>
+        </div>
+        <div class="col-lg-6">
+            <h3 th:text="${course.courseName}"></h3>
+            <a href="/">
+                <p th:text="'主讲人：'+${course.courseSupporter}">sqs</p>
+            </a>
+            <p th:text="${'更新时间：'+#dates.format(playVideo.videoCreateTime, 'yyyy-MM-dd')}"></p>
+        </div>
+    </div><br>
+            <div class="row">
+                    <div class="col-lg-5 col-lg-offset-1">
+                        <video height="500px"   controls>
+                            <source   th:src="@{'/video/'+${playVideo.videoLocation}}" type="video/mp4">
+                        </video>
+                    </div>
+                    <div class="col-lg-3 col-lg-offset-2">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <h4>课程简介</h4>
+                            </div>
+                            <div class="panel-body">
+                               <p th:text="${course.courseDescription}"></p>
+                            </div>
+                        </div>
+                        <br>
+                        <div class="panel-heading">
+                            <div class="panel panel-default">
+                                <div class="panel-heading">
+                                    <h4>视频列表</h4>
+                                </div>
+                        <div  class="pre-scrollable panel-body" style="height: 200px">
+                            <div th:each="video : ${videos}">
+                            <span >
+                                 <a th:href="@{'/video/switchVideo/'+${video.videoId}}" >
+                                <p th:text="${video.videoName}"></p>
+                                </a>
+                            </span>
+                        </div>
+                        </div>
+                        </div>
+                    </div>
+            </div>
+</div>
+
+</body>
+<script src="/webjars/jquery/3.2.1/jquery.min.js"></script>
+<script src="/webjars/bootstrap/3.3.7-1/js/bootstrap.min.js"></script>
+<style>
+    .my-video{
+        height: 600px;
+        width: 600px;
+    }
+    .my-img{
+        height: 100px;
+        width: 100px;
+    }
+    .my-ui{
+        list-style: none;
+    }
+    .my-li{
+        margin-bottom: 10px;
+    }
+</style>
+</html>
