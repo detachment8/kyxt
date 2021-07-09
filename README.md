@@ -1,4 +1,4 @@
-# kyxy
+# kyxt
 毕业设计-----考研视频课程商城系统
 
 
@@ -7,3 +7,6 @@
 选用了Spring Boot+MyBatis+Druid连接池作为后台开发框架，
 Thymeleaf页面模板引擎进行页面渲染。
 使用html5+bootstrap+layui作为前端界面框架，为用户提供精美的UI界面和浏览体验。
+
+
+数据库文件是myproject.sql
